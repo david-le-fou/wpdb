@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: wpdb le fou
+Plugin Name: wpdb enjana
 Plugin URI: https://github.com/david-le-fou/wpdb.git
 Description: utilisation wpdb
 Author: David le fou
