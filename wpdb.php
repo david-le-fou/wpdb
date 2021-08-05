@@ -103,3 +103,8 @@ add_action('wp','wpbd_result');
 // $wpdb->replace()
 // $wpdb->flush(); -Vous pouvez effacer le cache des résultats SQL
 ////////////////////////////////////////////////////////////////////
+define( 'BLOCK_LOAD', true );
+define('nom_site','cartepvctwo');
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/'.nom_site.'/wp-config.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] .'/'.nom_site.'/wp-includes/wp-db.php' );
+$wpdb = new wpdb( DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
