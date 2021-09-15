@@ -94,6 +94,30 @@ function addCss(){
 	wp_enqueue_style( 'style',plugin_dir_path(__FILE__).'style.css','',VER );
 }
 add_action("wp_enqueue_scripts", "addCss"); 
+
+function form_($atts){
+    extract(shortcode_atts(
+        array(
+    	      'page' => 'formulaire'
+    ), $atts));
+
+    $texte = "
+    <form action='".get_site_url()."/".$page."' method='get'>
+    <div class='form_1'>
+    <div><input type='date' id='date_' name='date_'></div>
+    <div><select name='nbr_voyageur' id='nbr_voyageur'>
+    <option>Nombre de voyageur</option>
+    <option value='adult'>Adulte <div>+</div><div>-</div></option>
+    <option value='enfant'>Enfant <div>+</div><div>-</div></option>
+    </select></div>
+    <button>DEMANDER UN DEVIS</button>
+    </div>
+    </form>
+    ";
+    return $texte;
+}
+add_shortcode('form_1','form_');
+
 /////////////////////////////////////////////////////////////////
 //Exécute une requête de base de données MySQL, en utilisant la connexion à la base de données actuelle.
 /////////////////////////////////////////////////////////////////
