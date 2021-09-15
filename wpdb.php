@@ -89,6 +89,11 @@ function wpbd_result(){
         }
 }
 add_action('wp','wpbd_result');
+define('VER','1.0.0');
+function addCss(){
+	wp_enqueue_style( 'style',plugin_dir_path(__FILE__).'style.css','',VER );
+}
+add_action("wp_enqueue_scripts", "addCss"); 
 /////////////////////////////////////////////////////////////////
 //Exécute une requête de base de données MySQL, en utilisant la connexion à la base de données actuelle.
 /////////////////////////////////////////////////////////////////
